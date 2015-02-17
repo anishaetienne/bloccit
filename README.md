@@ -2,4 +2,4 @@
 
 Made with my mentor at [Bloc](http://bloc.io).
 
-[Heroku app] (https://git.heroku.com/anisha-bloccit.git)
+[Heroku app] (https://anisha-bloccit.herokuapp.com/)
