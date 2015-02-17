@@ -2,5 +2,5 @@
 <p><%= @post.body %></p>
 
 <% if policy(@post).edit? %>
-  <%= link_to "Edit", edit_post_path(@post), class: 'btn btn-success' %>
+  <%= link_to "Edit", topic_path(@post), class: 'btn btn-success' %>
  <% end %>
