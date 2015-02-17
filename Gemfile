@@ -8,10 +8,12 @@ gem 'rails', '4.2.0'
    gem 'pg'
    gem 'rails_12factor'
  end
+ 
  group :development do
    gem 'sqlite3'
  end
-# Use SCSS for stylesheets
+
+ # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -19,6 +21,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+#use Twitter Bootstrap CSS framework
+gem 'bootstrap-sass'
+gem 'figaro', '1.0'
+gem 'faker'
+
+#use Devise for user-authentication capabilities
+gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
