@@ -1,6 +1,4 @@
-<% if policy(@topic).update? %>
-   <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
- <% end %>
+
  
  <div class="row">
    <div class="col-md-8">
@@ -23,5 +21,8 @@
    <% if policy(Post.new).create? %>
      <%= link_to "New Post", new_topic_post_path(@topic), class: 'btn btn-success' %>
    <% end %>
+   <% if policy(@topic).update? %>
+   <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
+ <% end %>
  </div>
  </div>
