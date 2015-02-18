@@ -2,5 +2,5 @@
 <%= markdown_to_html @post.body %>
 
 <% if policy(@post).edit? %>
-  <%= link_to "Edit", topic_posts_path(@post), class: 'btn btn-success' %>
+  <%= link_to "Edit", edit_topic_post_path, class: 'btn btn-success' %>
  <% end %>
