@@ -30,6 +30,7 @@ gem 'redcarpet'
 #use Devise for user-authentication capabilities
 gem 'devise'
 gem 'spring'
+gem 'will_paginate', '~> 3.0.5'
 
 gem 'carrierwave'
 gem 'mini_magick'
