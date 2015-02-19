@@ -2,5 +2,9 @@
 <%= markdown_to_html @post.body %>
 
 <% if policy(@post).edit? %>
+<<<<<<< HEAD
   <%= link_to "Edit", edit_topic_post_path, class: 'btn btn-success' %>
+=======
+  <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
+>>>>>>> fixing-bugs
  <% end %>
