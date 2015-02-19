@@ -31,6 +31,10 @@ gem 'redcarpet'
 gem 'devise'
 gem 'spring'
 
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
+
 #use Pundit for authorization
 gem 'pundit'
 
@@ -60,7 +64,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 
 end
 
