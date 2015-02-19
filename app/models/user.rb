@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :posts
 
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :image, ImageUploader
 
   def admin?
    role == 'admin'
