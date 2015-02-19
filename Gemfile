@@ -26,9 +26,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass'
 gem 'figaro', '1.0'
 gem 'faker'
-
+gem 'redcarpet'
 #use Devise for user-authentication capabilities
 gem 'devise'
+gem 'spring'
 
 #use Pundit for authorization
 gem 'pundit'
@@ -61,6 +62,5 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  gem 'redcarpet'
 end
 

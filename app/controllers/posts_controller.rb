@@ -11,14 +11,14 @@ class PostsController < ApplicationController
   end
 
   def edit
-     @topic = Topic.find(params[:topic_id])
+    @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     authorize @post
   end
 
   def create
-     @topic = Topic.find(params[:topic_id])
-    @post = current_user.posts.build(post_params)
+    @topic = Topic.find(params[:topic_id])
+    @post = current_user.posts.build(params.require(:post).permit(:title, :body))
     @post.topic = @topic
     authorize @post
 
