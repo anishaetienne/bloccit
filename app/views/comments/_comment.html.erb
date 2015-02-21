@@ -1,0 +1,4 @@
+<div class="comment-meta">
+    <small><%= comments.created_at %></small>
+    <%= link_to 'Destroy', [comments.post, comments], method: :delete,  confirm: 'Are you sure?', class: "tiny button radius right" %>
+</div>
