@@ -5,9 +5,14 @@ Rails.application.routes.draw do
 
   resources :topics do
      resources :posts, except: [:index]
+<<<<<<< HEAD
         resources :posts do
           resources :comments, only: [:create]
         end
+=======
+           resources :comments, only: [:create, :destroy]
+
+>>>>>>> destroy
   end
 
 
