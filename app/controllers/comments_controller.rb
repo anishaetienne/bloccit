@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class TopicsController < ApplicationController
   
   def new
@@ -17,7 +16,7 @@ class TopicsController < ApplicationController
  
   
 end
-=======
+
 def destroy
      @topic = Topic.find(params[:topic_id])
      @post = @topic.posts.find(params[:post_id])
@@ -32,4 +31,3 @@ def destroy
        redirect_to [@topic, @post]
      end
    end
->>>>>>> destroy

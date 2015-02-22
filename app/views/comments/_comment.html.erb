@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 <div class="comment-meta">
     <small><%= comments.created_at %></small>
     <%= link_to 'Destroy', [comments.post, comments], method: :delete,  confirm: 'Are you sure?', class: "tiny button radius right" %>
-=======
+
 <div class="media">
   <%= link_to '#', class: 'pull-left' do %>
     <%= image_tag(comment.user.avatar.small.url) if comment.user.avatar? %>
@@ -16,5 +15,4 @@
     </small>
     <p><%= comment.body %></p>
   </div>
->>>>>>> destroy
 </div>
