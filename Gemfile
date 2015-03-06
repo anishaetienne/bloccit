@@ -26,15 +26,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'bootstrap-sass'
 gem 'figaro', '1.0'
 gem 'faker'
-gem 'redcarpet'
+
 #use Devise for user-authentication capabilities
 gem 'devise'
-gem 'spring'
-gem 'will_paginate', '~> 3.0.5'
-
-gem 'carrierwave'
-gem 'mini_magick'
-gem 'fog'
 
 #use Pundit for authorization
 gem 'pundit'
@@ -65,10 +59,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-
-group :test do
-  gem 'rspec-rails', '~> 3.1.0'
-end
-
+  gem 'spring'
 end
 

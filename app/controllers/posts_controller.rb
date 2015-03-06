@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   def show
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
-    @comments = @post.comments
   end
 
   def new
@@ -12,14 +11,14 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @topic = Topic.find(params[:topic_id])
+     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     authorize @post
   end
 
   def create
-    @topic = Topic.find(params[:topic_id])
-    @post = current_user.posts.build(post_params)
+     @topic = Topic.find(params[:topic_id])
+    @post = current_user.posts.build(params.require(:post).permit(:title, :body))
     @post.topic = @topic
     authorize @post
 
@@ -45,27 +44,4 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
-  def destroy
-    @topic = Topic.find(params[:topic_id])
-    @post = Post.find(params[:id])
-    title = @post.title
-    authorize @post
-
-    if @post.destroy
-      flash[:notice] = "\"#{title}\" was deleted successfully."
-      redirect_to @topic
-    else
-      flash[:error] = "There was an error deleting the post."
-      render :show
-    end
-  end
-
-
-private
-
-def post_params
-  params.require(:post).permit(:title, :body, :image)
-end
-
 end
