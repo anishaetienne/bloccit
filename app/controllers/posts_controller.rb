@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   def show
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
+    @comments = @post.comments
+    @user = current_user.name
   end
 
   def new
@@ -43,6 +45,16 @@ class PostsController < ApplicationController
       flash[:error] = "There was an error saving the post. Please try again."
       render :new
     end
+  end
+
+  def destroy 
+    @topic = Topic.find(params[:topic_id])
+    @post = Post.find(params[:id])
+    @title = @post.title
+
+    authorize @post
+    if @post.destroy?
+      flash[:notice] = ""
   end
 
 
