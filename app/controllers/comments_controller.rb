@@ -1,16 +1,24 @@
 class CommentsController < ApplicationController
 
+respond_to :html, :js
+
   def create
-      @topic = Topic.find(params[:topic_id])
-      @post = @topic.posts.find(params[:post_id])
-      @comment = @post.comments.new(comment_params)
-      @comment.user_id = current_user.id
-    
-      if @comment.save
-        redirect_to [@topic, @post], notice: "Comment saved successfully."
-      else
-        redirect_to [@topic, @post], notice: "Comment failed to save."
-      end
+    @post = Post.find(params[:post_id])
+    @comment = current_user.comments.new(comment_params)
+    @comment.post = @post
+    @new_comment = Comment.new
+
+    authorize @comment
+
+    if @comment.save
+      flash[:notice] = "Comment was created."
+    else
+      flash[:error] = "Comment failed to save."
+    end
+
+    respond_with(@comment) do |format|
+      format.html { redirect_to [@post.topic, @post] }
+    end
   end
 
   def destroy
