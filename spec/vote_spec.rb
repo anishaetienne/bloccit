@@ -1,3 +1,5 @@
+
+
 describe Vote do 
   describe "validations" do
     describe "value validation" do
