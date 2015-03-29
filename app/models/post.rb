@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
   belongs_to :user
@@ -11,7 +12,7 @@ class Post < ActiveRecord::Base
   validates :topic, presence: true
   validates :user, presence: true
 
-  mount_uploader :image, ImageUploader
+  #mount_uploader :image, ImageUploader
 
   def up_votes
     votes.where(value: 1).count
@@ -35,3 +36,5 @@ class Post < ActiveRecord::Base
   def create_vote
     user.votes.create(value: 1, post: self)
   end
+
+end
