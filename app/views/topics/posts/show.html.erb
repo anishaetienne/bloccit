@@ -36,7 +36,7 @@
     <% if @comments.count == 0 %>
       <small><i><%= @user %> be the first to comment!</i></small>
     <% else %>
-      <%= render @comments %>
+      <%= render partial: 'comments/comment', collection: @comments %>
     <% end %>
   </div>
 </div>
