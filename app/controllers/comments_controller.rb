@@ -29,12 +29,13 @@ respond_to :html, :js
     authorize @comment
     if @comment.destroy
       flash[:notice] = "Comment was removed"
-      redirect_to [@topic, @post]
     else
       flash[:error] = "Comment couldn't be deleted. Please try again."
-      redirect_to [@topic, @post]
     end
-
+    
+    respond_with(@comment) do |format|
+       format.html{ redirect_to [@post.topic, @post] }
+     end
 
   end
 
