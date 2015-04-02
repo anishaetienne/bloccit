@@ -32,17 +32,14 @@
 
 <div style="margin-top:40px" class="row">
   <div class='col-md-12'>
-    <h3>Comments</h3>
-    <% if @comments.count == 0 %>
-      <small><i><%= @user %> be the first to comment!</i></small>
-    <% else %>
-      <%= render partial: 'comments/comment', collection: @comments %>
-    <% end %>
-  </div>
-</div>
-<div style="margin-top:40px" class="row">
+    <h2>Comments</h2>
   <div class='col-md-12'>
-    <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
+    <div class='js-comments'>
+      <%= render partial: 'comments/comment', collection: @comments %>
+    </div>
+    <div class='new-comment'>
+      <%= render 'comments/form' %>
+    </div>
   </div>
 </div>
 
